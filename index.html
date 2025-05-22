@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Archive - The Astrus Press</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI4IiB4PSI0IiB5PSI0IiBmaWxsPSIjRkZGNUY3IiBzdHJva2U9IiM2Mzc3OEIiIHN0cm9rZS13aWR0aD0iMiIgcng9IjIiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeD0iOCIgeT0iMiI+CjxwYXRoIGQ9Ik0yIDJMMTQgMiIgc3Ryb2tlPSIjNjM3NzhCIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMiA2TDE0IDYiIHN0cm9rZT0iIzYzNzc4QiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iNCIgdmlld0JveD0iMCAwIDEyIDQiIGZpbGw9Im5vbmUiIHg9IjIiIHk9IjgiPgo8cmVjdCB3aWR0aD0iMTIiIGhlaWdodD0iNCIgZmlsbD0iIzM3NEE1QiIgcng9IjIiLz4KPC9zdmc+CjxwYXRoIGQ9Ik0xNS41IDVMMTEuNSAxVjNMMTQgMy41TDE1LjUgNVoiIGZpbGw9IiMzNzRBNUIiLz4KPC9zdmc+CjwvcmVjdD4KPC9zdmc+">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0f1419;
+            color: #e6e6e6;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            border-bottom: 2px solid #1e2a35;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #1a2332;
+            border-radius: 12px;
+            border: 1px solid #2d3748;
+        }
+
+        .nav-btn {
+            background-color: #2d3748;
+            color: #e6e6e6;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .nav-btn:hover {
+            background-color: #4a5568;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.active {
+            background-color: #3182ce;
+            border-color: #4299e1;
+            color: #ffffff;
+        }
+
+        .policy-section {
+            display: none;
+            background-color: #1a2332;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #2d3748;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .policy-section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3182ce;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin: 30px 0 15px 0;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #cbd5e0;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 20px 0 20px 30px;
+            color: #cbd5e0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #4299e1;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #63b3ed;
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            background-color: #2d3748;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #3182ce;
+        }
+
+        .effective-date {
+            font-style: italic;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid #2d3748;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .policy-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Policy Archive</h1>
+            <p class="subtitle">The Astrus Press - Legal Documentation Center</p>
+        </header>
+
+        <nav class="nav-menu">
+            <button class="nav-btn active" onclick="showPolicy('terms')">Terms of Service</button>
+            <button class="nav-btn" onclick="showPolicy('privacy')">Privacy Policy</button>
+            <button class="nav-btn" onclick="showPolicy('refunds')">Refunds & Exchanges</button>
+            <button class="nav-btn" onclick="showPolicy('cookies')">Cookie Policy</button>
+        </nav>
+
+        <!-- Terms of Service -->
+        <section id="terms" class="policy-section active">
+            <h2>Terms of Service</h2>
+            <p class="effective-date">Effective Date: May 21, 2025</p>
+            
+            <p>Welcome to The Astrus Press. These Terms of Service ("Terms") govern your use of our website located at <a href="https://astrus.live">https://astrus.live</a> and all associated services, features, and content provided by The Astrus Press, a company based in Colorado, United States of America.</p>
+
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing or using our services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services.</p>
+
+            <h3>2. Eligibility and Account Creation</h3>
+            <p>You may create an account with us only if you are at least 18 years of age or older. By creating an account, you represent and warrant that you meet this age requirement and that all information you provide is accurate and complete.</p>
+
+            <h3>3. User Content and Conduct</h3>
+            <p>Users are permitted to upload text content in the form of reviews and comments. However, users are strictly prohibited from uploading any audio, video, or image content to our platform. We reserve the right to remove any content that violates these restrictions or our community standards.</p>
+            
+            <p>All Digital Millennium Copyright Act (DMCA) requests and notices must be sent to: <a href="mailto:soutien@astrus.live">soutien@astrus.live</a></p>
+
+            <h3>4. Purchases and Transactions</h3>
+            <p>Users are allowed to purchase goods and services directly from our platform. All purchases are subject to our Refunds & Exchanges Policy, which can be found in this Policy Archive.</p>
+
+            <h3>5. Subscription Services</h3>
+            <p>We offer various subscription plans that users may purchase. Users are allowed to cancel their subscriptions at any time through their account settings. Some subscription plans may include free trial periods, the terms of which will be clearly disclosed at the time of sign-up.</p>
+
+            <h3>6. Intellectual Property</h3>
+            <p>All content, trademarks, copyrights, and other intellectual property on our platform are the exclusive property of The Astrus Press. Users may not reproduce, distribute, or create derivative works from our proprietary content without explicit written permission.</p>
+
+            <h3>7. User Feedback and Suggestions</h3>
+            <p>Users are not compensated for any feedback, suggestions, or ideas provided to The Astrus Press. By submitting feedback or suggestions, you grant us the right to use, modify, and implement such feedback without compensation or attribution.</p>
+
+            <h3>8. Promotions and Contests</h3>
+            <p>We may offer promotions and contests from time to time. These are subject to specific terms and conditions that will be provided at the time of the promotion or contest. We do not offer sweepstakes.</p>
+
+            <h3>9. Limitation of Liability</h3>
+            <p>To the fullest extent permitted by law, The Astrus Press shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services.</p>
+
+            <h3>10. Governing Law</h3>
+            <p>These Terms are governed by the laws of the State of Colorado and the United States of America.</p>
+
+            <div class="contact-info">
+                <strong>Contact Information:</strong><br>
+                Email: <a href="mailto:soutien@astrus.live">soutien@astrus.live</a> or <a href="mailto:support@astrus.live">support@astrus.live</a><br>
+                Address: No Physical Address
+            </div>
+        </section>
+
+        <!-- Privacy Policy -->
+        <section id="privacy" class="policy-section">
+            <h2>Privacy Policy</h2>
+            <p class="effective-date">Effective Date: May 21, 2025</p>
+            
+            <p>The Astrus Press ("we," "us," or "our") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://astrus.live">https://astrus.live</a> and use our services.</p>
+
+            <h3>1. Information We Collect</h3>
+            <p>We collect personal information that you voluntarily provide to us, including but not limited to:</p>
+            <ul>
+                <li>Email addresses</li>
+                <li>Full names</li>
+                <li>Phone numbers</li>
+                <li>Mailing and billing addresses</li>
+                <li>Payment information (credit card details, billing information)</li>
+                <li>Account credentials and preferences</li>
+            </ul>
+
+            <h3>2. How We Use Your Information</h3>
+            <p>We use the information we collect for various purposes, including:</p>
+            <ul>
+                <li>Processing transactions and delivering products or services</li>
+                <li>Communicating with you about your account or transactions</li>
+                <li>Providing customer support</li>
+                <li>Sending promotional materials (with your consent)</li>
+                <li>Improving our website and services</li>
+                <li>Complying with legal obligations</li>
+            </ul>
+
+            <h3>3. Information Sharing and Disclosure</h3>
+            <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy or as required by law.</p>
+
+            <h3>4. Your Rights Under GDPR</h3>
+            <p>If you are a resident of the European Union, you have the following rights:</p>
+            <ul>
+                <li>Right to access your personal data</li>
+                <li>Right to rectify inaccurate personal data</li>
+                <li>Right to erase your personal data</li>
+                <li>Right to restrict processing of your personal data</li>
+                <li>Right to data portability</li>
+                <li>Right to object to processing</li>
+                <li>Right to withdraw consent</li>
+            </ul>
+
+            <h3>5. Your Rights Under CCPA</h3>
+            <p>If you are a California resident, you have the following rights:</p>
+            <ul>
+                <li>Right to know what personal information is collected</li>
+                <li>Right to know whether personal information is sold or disclosed</li>
+                <li>Right to say no to the sale of personal information</li>
+                <li>Right to access personal information</li>
+                <li>Right to equal service and price</li>
+            </ul>
+
+            <h3>6. Your Rights Under CalOPPA</h3>
+            <p>California residents have the right to request information about how we share certain categories of personal information with third parties for their direct marketing purposes.</p>
+
+            <h3>7. Data Security</h3>
+            <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+
+            <h3>8. Data Retention</h3>
+            <p>We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+
+            <h3>9. Changes to This Privacy Policy</h3>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the effective date.</p>
+
+            <div class="contact-info">
+                <strong>Contact Information:</strong><br>
+                Email: <a href="mailto:soutien@astrus.live">soutien@astrus.live</a> or <a href="mailto:support@astrus.live">support@astrus.live</a><br>
+                Address: No Physical Address
+            </div>
+        </section>
+
+        <!-- Refunds & Exchanges Policy -->
+        <section id="refunds" class="policy-section">
+            <h2>Refunds & Exchanges Policy</h2>
+            <p class="effective-date">Effective Date: May 21, 2025</p>
+            
+            <p>At The Astrus Press, we want you to be completely satisfied with your purchase. This Refunds & Exchanges Policy outlines our procedures for returns, refunds, and exchanges.</p>
+
+            <h3>1. 30-Day Money-Back Guarantee</h3>
+            <p>All shoppers are entitled to a 30-day money-back guarantee to ensure they are fully satisfied with their product. This guarantee applies to all purchases made through <a href="https://astrus.live">https://astrus.live</a> and associated platforms.</p>
+
+            <h3>2. Digital Products</h3>
+            <p>For digital products (software, e-books, digital downloads, etc.):</p>
+            <ul>
+                <li>No physical return is necessary as only a refund is required</li>
+                <li>Refund requests must be made within 30 days of purchase</li>
+                <li>Digital products cannot be exchanged, only refunded</li>
+                <li>Access to digital products will be revoked upon processing of the refund</li>
+            </ul>
+
+            <h3>3. Physical Products</h3>
+            <p>For physical products:</p>
+            <ul>
+                <li>Products must be returned within 14 days of requesting a return to be eligible for a refund</li>
+                <li>Products must be returned in the same condition in which they were received</li>
+                <li>Original packaging and all accessories must be included</li>
+                <li>Refunds will be processed 24 to 48 hours after we receive the returned product</li>
+            </ul>
+
+            <h3>4. Return Shipping Costs</h3>
+            <p>The cost of return shipping will be paid for by The Astrus Press. There is no expense on the consumer to return a product. We will provide you with a prepaid return shipping label upon approval of your return request.</p>
+
+            <h3>5. Exchanges</h3>
+            <p>Product exchanges are available under the following conditions:</p>
+            <ul>
+                <li>Only physical products can be exchanged</li>
+                <li>Digital products cannot be exchanged</li>
+                <li>Products can be exchanged for a similar priced product in the same category as the purchased product</li>
+                <li>Exchange requests must be made within 30 days of purchase</li>
+                <li>The original product must be returned in its original condition</li>
+            </ul>
+
+            <h3>6. How to Request a Return or Exchange</h3>
+            <p>To request a return or exchange:</p>
+            <ol>
+                <li>Contact us at <a href="mailto:support@astrus.live">support@astrus.live</a> or <a href="mailto:soutien@astrus.live">soutien@astrus.live</a></li>
+                <li>Provide your order number and reason for return/exchange</li>
+                <li>We will respond within 24 hours with instructions</li>
+                <li>Follow the provided instructions to complete your return or exchange</li>
+            </ol>
+
+            <h3>7. Processing Times</h3>
+            <ul>
+                <li>Return requests are processed within 24 hours of receipt</li>
+                <li>Refunds are issued 24-48 hours after receiving returned physical products</li>
+                <li>Digital product refunds are processed within 24 hours of approval</li>
+                <li>Refunds will appear on your original payment method within 3-5 business days</li>
+            </ul>
+
+            <h3>8. Non-Refundable Items</h3>
+            <p>Certain items may not be eligible for return or refund, including:</p>
+            <ul>
+                <li>Personalized or customized products</li>
+                <li>Products damaged by misuse or normal wear</li>
+                <li>Products returned after the 30-day period</li>
+            </ul>
+
+            <div class="contact-info">
+                <strong>Contact Information:</strong><br>
+                Email: <a href="mailto:soutien@astrus.live">soutien@astrus.live</a> or <a href="mailto:support@astrus.live">support@astrus.live</a><br>
+                Address: No Physical Address
+            </div>
+        </section>
+
+        <!-- Cookie Policy -->
+        <section id="cookies" class="policy-section">
+            <h2>Cookie Policy</h2>
+            <p class="effective-date">Effective Date: May 21, 2025</p>
+            
+            <p>This Cookie Policy explains how The Astrus Press uses cookies and similar technologies on our website <a href="https://astrus.live">https://astrus.live</a> and associated platforms.</p>
+
+            <h3>1. What Are Cookies</h3>
+            <p>Cookies are small text files that are stored on your device when you visit a website. They help websites remember information about your visit, which can make your next visit easier and more useful.</p>
+
+            <h3>2. How We Use Cookies</h3>
+            <p>We use both proprietary (first-party) and third-party cookies for various purposes:</p>
+
+            <h3>3. Proprietary Analytics Tools</h3>
+            <p>We use our own proprietary analytics tools to track how users interact with our website. These tools help us understand:</p>
+            <ul>
+                <li>Which pages are most popular</li>
+                <li>How users navigate through our site</li>
+                <li>User engagement patterns</li>
+                <li>Technical performance metrics</li>
+                <li>User demographics and preferences</li>
+            </ul>
+
+            <h3>4. Third-Party Analytics</h3>
+            <p>In addition to our proprietary tools, we also use third-party analytics services to gain additional insights into user behavior and website performance. These services may use cookies to collect and analyze data about your use of our website.</p>
+
+            <h3>5. Monetag Advertising Platform</h3>
+            <p>We use the Monetag platform to serve advertisements within our websites. Monetag may use cookies and similar technologies to:</p>
+            <ul>
+                <li>Display targeted advertisements based on your interests</li>
+                <li>Measure advertising effectiveness</li>
+                <li>Prevent the same ad from being shown repeatedly</li>
+                <li>Provide reporting on ad performance</li>
+            </ul>
+            <p>For more information about Monetag's privacy practices, please visit their privacy policy.</p>
+
+            <h3>6. Types of Cookies We Use</h3>
+            <ul>
+                <li><strong>Essential Cookies:</strong> Necessary for the website to function properly</li>
+                <li><strong>Analytics Cookies:</strong> Help us understand how visitors use our website</li>
+                <li><strong>Advertising Cookies:</strong> Used to serve relevant advertisements</li>
+                <li><strong>Functional Cookies:</strong> Remember your preferences and settings</li>
+            </ul>
+
+            <h3>7. Managing Cookies</h3>
+            <p>You can control cookies through your browser settings. Most browsers allow you to:</p>
+            <ul>
+                <li>View what cookies are stored on your device</li>
+                <li>Delete cookies individually or all at once</li>
+                <li>Block cookies from specific websites</li>
+                <li>Block all cookies</li>
+                <li>Set preferences for accepting cookies</li>
+            </ul>
+
+            <h3>8. Cookie Consent</h3>
+            <p>By continuing to use our website, you consent to our use of cookies as described in this policy. You can withdraw your consent at any time by adjusting your browser settings or contacting us.</p>
+
+            <h3>9. Updates to This Cookie Policy</h3>
+            <p>We may update this Cookie Policy from time to time to reflect changes in our practices or applicable laws. We will notify you of any significant changes by posting the updated policy on our website.</p>
+
+            <div class="contact-info">
+                <strong>Contact Information:</strong><br>
+                Email: <a href="mailto:soutien@astrus.live">soutien@astrus.live</a> or <a href="mailto:support@astrus.live">support@astrus.live</a><br>
+                Address: No Physical Address
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 The Astrus Press. All rights reserved. | Colorado, United States of America</p>
+            <p>For questions about these policies, contact us at <a href="mailto:soutien@astrus.live">soutien@astrus.live</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function showPolicy(policyId) {
+            // Hide all policy sections
+            const sections = document.querySelectorAll('.policy-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show the selected policy section
+            document.getElementById(policyId).classList.add('active');
+
+            // Add active class to the clicked button
+            event.target.classList.add('active');
+
+            // Scroll to top of the page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
